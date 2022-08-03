@@ -1,0 +1,94 @@
+<h3>Enter Tourist Details</h3>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="submitted" style="width: 400px;">
+      <form [formGroup]="touristsaveform" #savetourist (ngSubmit)="saveTourist(saveTourist)">
+        <div class="form-group">
+          <label for="name">Tourist Name</label>
+          <input type="text" class="form-control" formControlName="tourist_name" data-toggle="tooltip"
+            data-placement="right" title="Enter Tourist Name">
+          <div class="alert alert-danger" *ngIf="(TouristName.touched) && (TouristName.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="TouristName.errors.required">Tourist First Name is Required</span>
+            <span *ngIf="TouristName.errors.maxLength">MaxLength Error</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Tourist Lastname</label>
+          <input type="text" class="form-control" formControlName="tourist_lname" data-toggle="tooltip"
+            data-placement="right" title="Enter Tourist Lastname">
+          <div class="alert alert-danger" *ngIf="(TouristLastname.touched) && (TouristLastname.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="TouristName.errors.required">Tourist Lastname is Required</span>
+            <span *ngIf="TouristLastname.errors.maxlength">
+              MinLength Error
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Tourist Place</label>
+          <input type="text" class="form-control" formControlName="tourist_place" data-toggle="tooltip"
+            data-placement="right" title="Enter Tourist place">
+          <div class="alert alert-danger" *ngIf="(TouristPlace.touched) && (TouristPlace.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="TouristPlace.errors.required">Tourist Place is Required</span>
+            <span *ngIf="TouristPlace.errors.maxlength">
+              MaxLength Error
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="name">Tourist Number of date</label>
+          <input type="text" class="form-control" formControlName="tourist_numberofdate" data-toggle="tooltip"
+            data-placement="right" title="Enter Tourist Number of date">
+          <div class="alert alert-danger" *ngIf="(TouristNumberofdate.touched) && (TouristNumberofdate.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="TouristNumberofdate.errors.required">Tourist Numberofdate is Required</span>
+            <span *ngIf="TouristNumberofdate.errors.maxlength">
+              MaxLength Error
+            </span>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="name">Tourist Age</label>
+          <input type="text" class="form-control" formControlName="tourist_age" data-toggle="tooltip"
+            data-placement="right" title="Enter Tourist Age">
+          <div class="alert alert-danger" *ngIf="(TouristAge.touched) && (TouristAge.invalid)"
+            style="margin-top: 5px;">
+            <span *ngIf="TouristAge.errors.required">Tourist Age is Required</span>
+            <span *ngIf="TouristAge.errors.maxlength">
+              MaxLength Error
+            </span>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="gender">Tourist Gender</label>
+          <select class="form-control" formControlName="tourist_gender" data-toggle="tooltip" data-placement="right"
+            title="Select Tourist Gender">
+            <option value="null">--Select Gender--</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+    <div [hidden]="!submitted">
+      <h4>Tourist Added SuccessFully!</h4>
+      <button (click)="addTouristForm()" class='btn btn-primary'>Add More Tourist</button>
+    </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>

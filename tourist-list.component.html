@@ -1,0 +1,55 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 style="text-align: center">Tourists Details</h1><br>
+    <div class="panel-body">
+      <table class="table table-hover table-sm" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+        <thead class="thead-light">
+          <tr>
+            <th>Tourist Name</th>
+            <th>Tourist Lastame</th>
+            <th>Tourist place</th>
+            <th>Tourist Numberofdate</th>
+            <th>Tourist Age</th>
+            <th>Tourist Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tourist of tourists ">
+            <td>{{tourist.tourist_name}}</td>
+            <td>{{tourist.tourist_lname}}</td>
+            <td>{{tourist.tourist_place}}</td>
+            <td>{{tourist.tourist_numberofdate}}</td>
+            <td>{{tourist.tourist_age}}</td>
+            <td>{{tourist.tourist_gender}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <!-- Modal body -->
+  <div class="modal-body" *ngFor="let tourist of touristlist ">
+    <div [hidden]="isupdated">
+      <input type="hidden" class="form-control" formControlName="tourist_id" [(ngModel)]="tourist.tourist_id">
+      <div class="form-group">
+        <label for="name">Tourist Name</label>
+        <input type="text" class="form-control" formControlName="tourist_name" [(ngModel)]="tourist.tourist_name">
+      </div>
+      <div class="form-group">
+        <label for="name">Tourist Lastname</label>
+        <input type="text" class="form-control" formControlName="tourist_lname" [(ngModel)]="tourist.tourist_lname">
+      </div>
+      <div class="form-group">
+        <label for="name">Tourist Place</label>
+        <input type="text" class="form-control" formControlName="tourist_place" [(ngModel)]="tourist.tourist_place">
+      </div>
+      <div class="form-group">
+        <label for="name">Tourist Numberofdate</label>
+        <input type="text" class="form-control" formControlName="tourist_numberofdate" [(ngModel)]="tourist.tourist_numberofdate">
+      </div> 
+      <div class="form-group">
+        <label for="name">Tourist Age</label>
+        <input type="text" class="form-control" formControlName="tourist_age" [(ngModel)]="tourist.tourist_age">
+      </div> 
+    </div>
+  </div>
+</div>
+</div>
